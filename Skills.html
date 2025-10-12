@@ -5,57 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hlengiwe Bengu | Portfolio</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: 'Times New Roman', Times, serif;
       background-color: #000;
       color: #fff;
-  
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
+    .navbar {
       background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      z-index: 1000;
-}
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-nav {
- height: 90px;
- display: flex;
- justify-content:center;
- align-items:center;
- list-style: none;
- font-size: 30px;
-}
+    .navbar a {
+      color: white !important;
+      transition: 0.4s ease-in-out;
+      font-family: 'Times New Roman', Times, serif;
+    }
 
- nav a {
- color: white;
- text-decoration: none;
- font-family: 'Times New Roman', Times, serif;
- font-weight: bold;
- padding: 10px 20px;
- transition:0.4s ease-in-out;
-}
+    .navbar a:hover {
+      color: pink !important;
+    }
 
-nav::after{
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: pink;
-  display: block;
-  margin: auto;
-  transition: 3s;
-}
+    .navbar-toggler {
+      border-color: pink;
+    }
 
-nav a:hover {
-  color: pink;
-}
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='pink' viewBox='0 0 30 30'%3e%3cpath stroke='pink' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
 
     section {
       padding: 120px 20px;
@@ -66,173 +48,187 @@ nav a:hover {
     h2 {
       font-size: 3rem;
       color: pink;
-     
     }
 
-#skillsHeading {
-  color: pink;
-  font-size: 3rem;
-  text-align: center;
-  border-right: 3px solid pink;
-  white-space: nowrap;
-  overflow: hidden;
-  width: fit-content;
-  margin: 0 auto 40px auto;
-  animation: blink 0.7s step-end infinite alternate;
-}
+    #skillsHeading {
+      color: pink;
+      font-size: 3rem;
+      text-align: center;
+      border-right: 3px solid pink;
+      white-space: nowrap;
+      overflow: hidden;
+      width: fit-content;
+      margin: 0 auto 40px auto;
+      animation: blink 0.7s step-end infinite alternate;
+    }
 
-@keyframes blink {
-  from { border-color: pink; }
-  to { border-color: transparent; }
-}
+    @keyframes blink {
+      from { border-color: pink; }
+      to { border-color: transparent; }
+    }
 
-  #skills {
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+    #skills {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
 
-#skills h2 {
-  color: pink;
-  font-size: 3.5rem;
-  text-align: center;
-  margin-top: 100px;
-}
+    #skills h2 {
+      color: pink;
+      font-size: 3.5rem;
+      text-align: center;
+      margin-top: 100px;
+    }
 
-.skills-container {
-  width: 70%;
-  max-width: 700px;
-}
-.skill {
-  margin-bottom: 20px;
-}
+    .skills-container {
+      width: 70%;
+      max-width: 700px;
+    }
 
-.skill span {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: white;
-}
+    .skill {
+      margin-bottom: 20px;
+    }
 
-.progress-bar {
-  background-color: #222;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 20px;
-  width: 100%;
-  margin-bottom: 5px;
-}
+    .skill span {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: white;
+    }
 
-.progress {
-  background-color: pink;
-  height: 100%;
-  border-radius: 20px 0 0 20px;
-  transition: width 1s ease-in-out;
-}
+    .progress-bar {
+      background-color: #222;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      width: 100%;
+      margin-bottom: 5px;
+    }
 
-.skill p {
-  color: white;
-  font-size: 1rem;
-  margin: 0;
-  text-align: right;
-}
+    .progress {
+      background-color: pink;
+      height: 100%;
+      border-radius: 20px 0 0 20px;
+      transition: width 1s ease-in-out;
+    }
 
-   footer {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  background: transparent;
-  color: white;
-  font-size: 14px;
-}
+    .skill p {
+      color: white;
+      font-size: 1rem;
+      margin: 0;
+      text-align: right;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+    }
+
+     @media (max-width: 767px) {
+      section {
+        padding-top: 180px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <nav>
-      <a href="Index.html">Home</a>
-      <a href="About Me.html">About Me</a>
-      <a href="Skills.html">Skills</a>
-      <a href="Contact Me.html">Contact</a>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container-fluid justify-content-center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="Index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Me.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <section id="skills">
-  <h2 id="skillsHeading"></h2>
-  <div class="skills-container">
-    <div class="skill">
-      <span>HTML</span>
-      <div class="progress-bar">
-        <div class="progress" style="width: 85%;"></div>
+    <h2 id="skillsHeading"></h2>
+    <div class="skills-container">
+      <div class="skill">
+        <span>HTML</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+        <p>85%</p>
       </div>
-      <p>85%</p>
-    </div>
 
-    <div class="skill">
-      <span>CSS</span>
-      <div class="progress-bar">
-        <div class="progress" style="width: 75%;"></div>
+      <div class="skill">
+        <span>CSS</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+        <p>80%</p>
       </div>
-      <p>80%</p>
-    </div>
 
-    <div class="skill">
-      <span>JavaScript</span>
-      <div class="progress-bar">
-        <div class="progress" style="width: 35%;"></div>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 35%;"></div>
+        </div>
+        <p>50%</p>
       </div>
-      <p>50%</p>
-    </div>
 
-    <div class="skill">
-      <span>Python</span>
-      <div class="progress-bar">
-        <div class="progress" style="width: 45%;"></div>
+      <div class="skill">
+        <span>Python</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 45%;"></div>
+        </div>
+        <p>30%</p>
       </div>
-      <p>30%</p>
-    </div>
 
-    <div class="skill">
-      <span>UX Design</span>
-      <div class="progress-bar">
-        <div class="progress" style="width: 60%;"></div>
+      <div class="skill">
+        <span>UX Design</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 60%;"></div>
+        </div>
+        <p>75%</p>
       </div>
-      <p>75%</p>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <footer>
-  Copyright &copy;2025; Designed by <span class="designer"> Hlengiwe Bengu
+    Copyright &copy;2025; Designed by <span class="designer"> Hlengiwe Bengu</span>
   </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const text = "My Skills";
-    const heading = document.getElementById("skillsHeading");
-    let i = 0;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    function typeWriter() {
-      if (i < text.length) {
-        heading.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 150); // speed of typing
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const text = "My Skills";
+      const heading = document.getElementById("skillsHeading");
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          heading.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 150);
+        }
       }
-    }
 
-    typeWriter();
-  });
-</script>
+      typeWriter();
+    });
+  </script>
 
 </body>
 </html>
-
