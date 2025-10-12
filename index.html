@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hlengiwe Bengu | Portfolio</title>
 
+  <!-- ✅ Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -18,45 +21,28 @@
       top: 0;
       width: 100%;
       background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      padding: 30px 0;
       z-index: 1000;
-}
+    }
 
-nav {
- height: 100px;
- display: flex;
- justify-content:center;
- align-items:center;
- list-style: none;
- font-size: 35px;
- gap: 30px;
-}
+    /* NAVIGATION */
+    nav.navbar {
+      padding: 20px 0;
+    }
 
- nav a {
- color: white;
- text-decoration: none;
- font-family: 'Times New Roman', Times, serif;
- font-weight: bold;
- padding: 10px 20px;
- transition:0.4s ease-in-out;
-}
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1.3rem;
+      padding: 10px 20px;
+      transition: 0.4s ease-in-out;
+      font-family: 'Times New Roman', Times, serif;
+    }
 
-nav::after{
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: pink;
-  display: block;
-  margin: auto;
-  transition: 3s;
-}
+    .navbar-nav .nav-link:hover {
+      color: pink !important;
+    }
 
-nav a:hover {
-  color: pink;
-}
-
+    /* TYPEWRITER EFFECT */
     .typewriter {
       display: inline-block;
       overflow: hidden;
@@ -75,118 +61,111 @@ nav a:hover {
       50% { border-color: pink; }
     }
 
-  
-section#home {
-  height: 100vh; 
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  padding: 0 50px;
-  box-sizing: border-box;
-  margin: 0;
-}
+    /* HOME SECTION */
+    section#home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 120px; /* space for navbar */
+    }
 
-.home-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1000px;
-}
+    .intro-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-.intro-text {
-  flex: 1;
-  text-align: left;
-}
+    .intro-text p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
 
-.intro-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
+    .intro-image img {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid pink;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+    }
 
-.intro-text p {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  max-width: 500px;
-  margin: 20px 0;
-}
+    footer {
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      padding: 15px 0;
+      background: transparent;
+    }
 
-.intro-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
+    @media (max-width: 768px) {
+      .intro-text h1 {
+        font-size: 2rem;
+      }
 
-.intro-image img {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid pink;
-  box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
-}
+      .intro-image img {
+        width: 220px;
+        height: 220px;
+      }
 
-footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  background: transparent;
-  color: white;
-  font-size: 14px;
-}
-
-
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .intro-image img {
-    width: 230px;
-    height: 210px;
-    margin-top: 15px;
-  }
-
-  .intro-text h1 {
-    font-size: 2rem;
-  }
-}
-
+      .intro-text p {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- ✅ Bootstrap Navbar -->
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="About Me.html">About Me</a>
-      <a href="Skills.html">Skills</a>
-      <a href="Contact Me.html">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-pink" href="#" style="color:pink;">HB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact Me.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-
+  <!-- ✅ Home Section -->
   <section id="home">
-  <div class="home-container">
-    <div class="intro-text">
-      <h1 class="typewriter">Hi, I’m <span style="color:pink;">Hlengiwe Bengu</span></h1>
-      <p>I’m a web developer that enjoys building clean, modern, and user-friendly websites.</p>
-      <p>I love turning ideas into digital experiences that look good and work smoothly.</p>
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="intro-text">
+            <h1 class="typewriter">Hi, I’m <span style="color:pink;">Hlengiwe Bengu</span></h1>
+            <p>I’m a web developer that enjoys building clean, modern, and user-friendly websites.</p>
+            <p>I love turning ideas into digital experiences that look good and work smoothly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 text-center mt-4 mt-md-0">
+          <div class="intro-image">
+            <img src="Snapchat-2063944186.jpg" alt="Hlengiwe Bengu">
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="intro-image">
-      <img src="Snapchat-2063944186.jpg" >
-    </div>
-  </div>
-</section>
-
-
+  <!-- ✅ Footer -->
   <footer>
-  Copyright &copy;2025; Designed by <span class="designer"> Hlengiwe Bengu
+    Copyright &copy; 2025 | Designed by
+    <span style="color:pink;">Hlengiwe Bengu</span>
   </footer>
+
+  <!-- ✅ Add Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
