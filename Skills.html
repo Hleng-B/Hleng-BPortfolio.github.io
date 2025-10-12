@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hlengiwe Bengu | Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #000;
+      color: #fff;
+  
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 1000;
+}
+
+nav {
+ height: 90px;
+ display: flex;
+ justify-content:center;
+ align-items:center;
+ list-style: none;
+ font-size: 30px;
+}
+
+ nav a {
+ color: white;
+ text-decoration: none;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+ padding: 10px 20px;
+ transition:0.4s ease-in-out;
+}
+
+nav::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: pink;
+  display: block;
+  margin: auto;
+  transition: 3s;
+}
+
+nav a:hover {
+  color: pink;
+}
+
+    section {
+      padding: 120px 20px;
+      text-align: center;
+      font-size: larger;
+    }
+
+    h2 {
+      font-size: 3rem;
+      color: pink;
+     
+    }
+
+#skillsHeading {
+  color: pink;
+  font-size: 3rem;
+  text-align: center;
+  border-right: 3px solid pink;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  animation: blink 0.7s step-end infinite alternate;
+}
+
+@keyframes blink {
+  from { border-color: pink; }
+  to { border-color: transparent; }
+}
+
+  #skills {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#skills h2 {
+  color: pink;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.skills-container {
+  width: 70%;
+  max-width: 700px;
+}
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill span {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.progress-bar {
+  background-color: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.progress {
+  background-color: pink;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  transition: width 1s ease-in-out;
+}
+
+.skill p {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  text-align: right;
+}
+
+   footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="Index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Contact Me.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="skills">
+  <h2 id="skillsHeading"></h2>
+  <div class="skills-container">
+    <div class="skill">
+      <span>HTML</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 85%;"></div>
+      </div>
+      <p>85%</p>
+    </div>
+
+    <div class="skill">
+      <span>CSS</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%;"></div>
+      </div>
+      <p>80%</p>
+    </div>
+
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 35%;"></div>
+      </div>
+      <p>50%</p>
+    </div>
+
+    <div class="skill">
+      <span>Python</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+      <p>30%</p>
+    </div>
+
+    <div class="skill">
+      <span>UX Design</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
+      </div>
+      <p>75%</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+  Copyright &copy;2025; Designed by <span class="designer"> Hlengiwe Bengu
+  </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const text = "My Skills";
+    const heading = document.getElementById("skillsHeading");
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        heading.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 150); // speed of typing
+      }
+    }
+
+    typeWriter();
+  });
+</script>
+
+</body>
+</html>
+

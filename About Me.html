@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hlengiwe Bengu | Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 1000;
+}
+
+nav {
+ height: 90px;
+ display: flex;
+ justify-content:center;
+ align-items:center;
+ list-style: none;
+ font-size: 30px;
+}
+
+ nav a {
+ color: white;
+ text-decoration: none;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+ padding: 10px 20px;
+ transition:0.4s ease-in-out;
+}
+
+nav::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: pink;
+  display: block;
+  margin: auto;
+  transition: 3s;
+}
+
+nav a:hover {
+  color: pink;
+}
+
+#aboutHeading {
+  color: pink;
+  font-size: 3rem;
+  text-align: center;
+  border-right: 3px solid pink;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  animation: blink 0.7s step-end infinite alternate;
+}
+
+@keyframes blink {
+  from { border-color: pink; }
+  to { border-color: transparent; }
+}
+
+    section {
+      padding: 120px 20px;
+      text-align: center;
+     
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      color: pink;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="Index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Contact Me.html">Contact</a>
+    </nav>
+  </header>
+
+
+  <section id="about">
+    <h2 id="aboutHeading"></h2>
+    <p>I’m an aspiring <strong>Full-Stack Developer</strong> currently in a learnership program. I’ve already mastered the basics of building responsive websites and I’m continuously learning both front-end and back-end development.</p>
+    <p>Alongside web development, I study <strong>Management Assistant</strong> and plan to combine my IT and admin skills to become a <strong>virtual assistant</strong> who simplifies administrative work through smart digital tools.</p>
+  </section>
+
+  <footer>
+  Copyright &copy;2025; Designed by <span class="designer"> Hlengiwe Bengu
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const text = "About Me";
+    const heading = document.getElementById("aboutHeading");
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        heading.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 150); 
+      }
+    }
+
+    typeWriter();
+  });
+</script>
+
+  
+</body>
+</html>
