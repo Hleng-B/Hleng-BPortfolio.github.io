@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hlengiwe Bengu | Skills & Projects</title>
+  <style>
+    :root{
+      --bg:#000;
+      --card:#0f0f10;
+      --color:pink;
+      --white:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--white);
+      font-family: 'Times New Roman', Times, serif;
+    
+    }
+
+    /* header/nav */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      justify-content:center;
+      padding:15px 0;
+      z-index:1000;
+    }
+    nav{
+      height:90px;
+       display:flex;
+        justify-content:center; 
+        align-items:center;
+         font-size:30px;}
+
+    nav a{ color: white; 
+      text-decoration:none; 
+      font-weight:bold; 
+      padding:10px 20px;
+       transition:0.3s; }
+
+nav::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: pink;
+  display: block;
+  margin: auto;
+  transition: 3s;
+}
+   nav a:hover {
+  color: pink;
+}
+
+    /* main container - gives space for fixed header */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:120px 20px 80px; /* top padding to clear fixed header, bottom for footer */
+    }
+
+    /* typewriter (shared for both headings) */
+   .typewriter {
+  color: pink;
+  font-size: 3rem;
+  text-align: center;
+  border-right: 3px solid pink;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 40px auto ;
+  animation: blink 0.7s step-end infinite alternate;
+}
+
+@keyframes blink {
+  from { border-color: pink; }
+  to { border-color: transparent; }
+}
+
+    /* Skills layout (keeps your original look) */
+    #skills{
+      background:transparent;
+       display:flex;
+        flex-direction:column;
+         align-items:center; 
+         justify-content:center;
+          padding:0 20px; 
+          box-sizing:border-box;}
+
+    .skills-container{  /*controls the progress bar containers*/
+      width:70%; 
+      max-width:700px;
+       margin:0 auto; }
+
+
+    .progress-bar{
+       background:#222;
+        border-radius:20px;
+         overflow:hidden;
+          height:30px;
+           width:100%;
+            margin-bottom:5px; }
+
+    .progress{
+       background-color: pink;
+        height:100%;
+         border-radius:20px 0 0 20px;
+          transition:width 1s ease-in-out; }
+
+    .skill p{
+       color:white; 
+       font-size:1rem;
+        margin:0;
+         text-align:right; }
+
+    /* Projects grid - compact cards, centered (Option A) */
+    .projects{ display:flex;
+       gap:30px;
+        justify-content:center; 
+        flex-wrap:wrap; padding:30px 10px 10px; 
+        align-items:flex-start; }
+
+    .card{
+      width:260px;
+      background:var(--card);
+      border-radius:10px;
+      overflow:hidden;
+      cursor:pointer;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+      transition:transform 180ms ease, box-shadow 180ms ease;
+      padding-bottom:14px;
+    }
+
+    .card:hover{ 
+      transform:translateY(-6px);
+       box-shadow:0 12px 28px rgba(0,0,0,0.7); }
+
+    .thumb{
+       display:block;
+        width:100%;
+         height:140px;
+          object-fit:cover;
+           background:#222; }
+
+    .card-body{ 
+      padding:12px 14px; }
+
+    .project-title{
+       font-size:2rem;
+        margin:8px 0;
+         color:var(--white); }
+
+    .btn{ 
+      display:inline-block;
+       margin-top:6px; padding:8px 12px;
+       border-radius:8px;
+        background:transparent;
+         border:1px solid rgba(255,255,255,0.08);
+          color:var(--white);
+           text-decoration:none;
+            font-size:1rem; }
+
+            .btn:hover {
+  color: pink;
+}
+
+
+    /* Compact modal (no image, only short desc + View Live) */
+    .modal{
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.72);
+      opacity:0;
+      visibility:hidden;
+      transition:opacity 220ms ease, visibility 220ms ease;
+      z-index:2000;
+      padding:20px;
+    }
+    .modal.show{ opacity:1; visibility:visible; }
+
+    .modal-card{
+      background:linear-gradient(180deg,#0f0f10,#0b0b0b);
+      width:min(420px, 95%);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 30px 80px rgba(0,0,0,0.8);
+      transform:translateY(8px);
+      transition:transform 220ms ease;
+    }
+    .modal.show .modal-card{ transform:translateY(0); }
+
+    .modal-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+    .modal-head h3{ margin:0; color:var(--pink); font-size:1.2rem; }
+
+    .close{ background:transparent;
+       border:0;
+        color:white;
+         font-size:1.25rem; 
+         cursor:pointer; }
+
+         .close:hover {
+  color: red;
+         }
+
+    .modal-desc{ color:rgba(255,255,255,0.94);
+       margin-top:12px; 
+       line-height:1.5; 
+       font-size:0.98rem; }
+
+    .modal-actions{ margin-top:16px; 
+      display:flex; gap:12px; }
+
+    .primary{ 
+      background:var(--pink); color:white;
+       padding:10px 14px;
+        border-radius:8px; 
+        text-decoration:none;
+       font-weight:600; }
+
+       .primary:hover {
+  color: pink;
+       }
+
+    /* footer fixed */
+    footer{
+      position:fixed;
+      left:0;
+      bottom:0;
+      width:100%;
+      text-align:center;
+      background:transparent;
+      color:white;
+      font-size:14px;
+      padding:8px 0;
+      z-index:1000;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:880px){
+      .projects{ gap:18px; }
+      .card{ width:45%; }
+    }
+    @media (max-width:520px){
+      .card{ width:100%; }
+      .typewriter{ font-size:2rem }
+      .skills-container{ width:92%; }
+      .container{ padding:110px 14px 80px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Contact Me.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- SKILLS -->
+    <div id="skillsTitle" class="typewriter" aria-hidden="false"></div>
+
+    <section id="skills">
+      <div class="skills-container">
+        <div class="skill">
+          <span>HTML</span>
+          <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+          <p>85%</p>
+        </div>
+
+        <div class="skill">
+          <span>CSS</span>
+          <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+          <p>80%</p>
+        </div>
+
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+          <p>50%</p>
+        </div>
+
+        <div class="skill">
+          <span>Python</span>
+          <div class="progress-bar"><div class="progress" style="width:45%"></div></div>
+          <p>30%</p>
+        </div>
+
+        <div class="skill">
+          <span>UX Design</span>
+          <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+          <p>75%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <div id="projectsTitle" class="typewriter" aria-hidden="false"></div>
+
+    <section class="projects" aria-label="projects list">
+      <!-- card 1 -->
+      <article class="card" data-live="https://example.com/rumnsun" data-project="Rumnsun Retreat" onclick="openModalFromCard(this)">
+        <img class="thumb" src="RnSDisplay.png" alt="Rumnsun Retreat preview" />
+        <div class="card-body">
+          <div class="project-title">Rumnsun Retreat</div>
+          <span class="btn">View details</span>
+        </div>
+      </article>
+
+      <!-- card 2 -->
+      <article class="card" data-live="https://hleng-b.github.io/Hleng-BWork1/" data-project="NJ Treats" onclick="openModalFromCard(this)">
+        <img class="thumb" src="NJtreatsdisplay.png" alt="NJ Treats preview" />
+        <div class="card-body">
+          <div class="project-title">NJ Treats</div>
+          <span class="btn">View details</span>
+        </div>
+      </article>
+
+      <!-- card 3 -->
+      <article class="card" data-live="http://dlamassregister.nobztech.co.za" data-project="Agriday 2025" onclick="openModalFromCard(this)">
+        <img class="thumb" src="AgridayDisplay.png" alt="Agriday 2025 preview" />
+        <div class="card-body">
+          <div class="project-title">Agriday 2025</div>
+          <span class="btn">View details</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Compact modal (title + short desc + live link) -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" onclick="handleBackdrop(event)">
+    <div class="modal-card" id="modalCard" onclick="event.stopPropagation()">
+      <div class="modal-head">
+        <h3 id="modalTitle">Project</h3>
+        <button class="close" aria-label="Close modal" onclick="closeModal()">✕</button>
+      </div>
+      <p id="modalDesc" class="modal-desc">Project description lives here.</p>
+      <div class="modal-actions">
+        <a id="modalLive" class="primary" href="#" target="_blank" rel="noopener">View Live Website</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Copyright &copy;2025; Designed by Hlengiwe Bengu</footer>
+
+  <script>
+    /* Shared typewriter style used for both headings (same visual style) */
+    const typeText = (el, text, speed=80) => {
+      if (!el) return;
+      el.textContent = '';
+      let i = 0;
+      const tick = () => {
+        if (i < text.length) { el.textContent += text.charAt(i); i++; setTimeout(tick, speed); }
+      };
+      tick();
+    };
+
+    window.addEventListener('DOMContentLoaded', ()=>{
+      typeText(document.getElementById('skillsTitle'), 'My Skills');
+      setTimeout(()=> typeText(document.getElementById('projectsTitle'), 'My Projects'), 420);
+    });
+
+    /* Modal logic (compact) */
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLive = document.getElementById('modalLive');
+
+    function openModalFromCard(card){
+      const title = card.dataset.project || 'Project';
+      const live = card.dataset.live || '#';
+
+      modalTitle.textContent = title;
+      modalDesc.textContent = getProjectDescription(title);
+      modalLive.href = live;
+
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+    }
+
+    function closeModal(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    function handleBackdrop(e){
+      if(e.target === modal) closeModal();
+    }
+
+    function getProjectDescription(title){
+      const map = {
+        'Rumnsun Retreat': 'A small retreat booking mockup with responsive layout and accessible forms. Built with HTML, CSS and JavaScript for interactivity. It is the first group project we worked on for presentation to a panel of experts so they can see how far we have come in the program.',
+        'NJ Treats': 'A bakery / treats demo with product gallery, cart UI patterns and responsive grid. Focus on UX and product imagery. My first project that still needs work and will be updated as i learn',
+        'Agriday 2025': 'Landing page for an agriculture event with an embedded registration form. Mobile-first design suitable for students using their phone to access the site'
+      };
+      return map[title] || 'Project overview, tech used and important links.';
+    }
+
+    // close modal with ESC
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>
