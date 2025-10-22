@@ -14,6 +14,21 @@
       background-color: #000;
       color: #fff;
     }
+    
+ html, body {
+  margin: 0;
+  height: 100vh;       /* make page height exactly the screen height */
+  overflow: hidden;    /* disable scrolling */
+  display: flex;
+  flex-direction: column;
+}
+    
+ main {
+  flex: 1;             /* take up remaining space above footer */
+  /* your content here */
+}
+
+    
 nav.navbar {
       transition: background-color 0.5s ease, box-shadow 0.5s ease;
       background: rgba(0, 0, 0, 0.2);
@@ -179,5 +194,6 @@ nav.navbar {
   
 </body>
 </html>
+
 
 
