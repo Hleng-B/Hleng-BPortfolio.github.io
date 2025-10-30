@@ -13,6 +13,6 @@ Responsive & Elegant UI
 Git & GitHub for version control
 
 Live Website
-https://hleng-b.github.io/
+https://hleng-b.github.io/Hleng-BPortfolio.github.io/ 
 
 I have included two other reposetories that showcase the work I have previosly done and will continue to work on until it is fully functional and responsive
